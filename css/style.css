@@ -22,6 +22,13 @@ html{
   scroll-padding-top: 6rem;
   scroll-behavior: smooth;
 }
+body::-webkit-scrollbar{
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #d4d2d2;
+  border-radius: 100rem;
+}
 
 section{
   padding:2rem 9%;
@@ -46,11 +53,17 @@ section{
 }
 .navbar{
   padding: 8px 0;
+  transition: all .3s;
+  border-bottom:1px solid #ccc ;
 }
 .nav1{
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+}
+.icon{
+  color: #fff;
+  font-size: xx-large;
 }
 
 .nav-title{
@@ -58,20 +71,20 @@ section{
   font-weight: bold;
   font-family: 'Baloo Chettan', cursive;
   text-transform: uppercase;
-  color: aliceblue;
+  color: aliceblue ;
 }
 .nav-title:hover{
-  color: aliceblue;
+  color: aliceblue ;
 }
 .nav-title--f{
   color: #ffa500;
 }
 .nav-item{
-  margin: 0 10px !important;
+  margin: 0 10px ;
 }
 .nav-item,.nav-link{
   font-size: 16px;
-  color: aliceblue;
+  color: aliceblue ;
   font-weight: 600;
   transition: all .3s;
 }
@@ -93,13 +106,25 @@ section{
   border: 1px solid #ffa500;
   cursor: pointer;
   border-radius: 18px;
-  color: aliceblue;
+  color: aliceblue ;
   transition: all .3s;
 }
 .nav-btn:hover{
   color: #ffa500;
   border: 1px solid #474d56;
   background-color: aliceblue;
+}
+.navbar-toggler{
+  width: 30px;
+  height: 30px;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-toggler i {
+  font-size: 1.6rem;
 }
 
 
@@ -338,6 +363,19 @@ body {
   text-align: center;
   z-index: 2; /*hiển thị chồng lên 2 lớp so với các ptu khác (backgr và div)*/
   margin-top: 40px;
+  border-radius: 10px;
+  transition: all .4s;
+  animation: showImage ease-out .4s;
+}
+/* tạo tý amimation cho ảnh nhé */
+@keyframes showImage { 
+  from{
+    opacity: 0;
+    
+  }
+  to{
+    opacity: 1;
+  }
 }
 
 #giftButton:hover{
@@ -349,14 +387,20 @@ body {
   max-width: 100%;
   max-height: 80vh;
   margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 2px #a5a3a3;
 }
 
 #closeButton {
+  position: absolute;
+  right: 0;
   background-color: #e6a637;
   color: #fff;
   border: none;
+  border-top-right-radius:10px;
   padding: 10px;
   cursor: pointer;
+  
 }
 --------------------------------------------------------------------
 
@@ -454,7 +498,7 @@ body {
   position: relative;
   top: 15px;
   display: inline-block;
-  padding: 12px 25px;
+  padding: 6px 25px;
   text-decoration: none;
   background: var(--clr);
   color: white;
@@ -581,4 +625,29 @@ footer {
   color: #ccc;
   font-size: 14px;
   margin-top: 20px;
+}
+
+@media screen and (max-width:700px) {
+  #navBar{
+    background-color: #2b3035 !important;
+  }
+  .nav-title{
+    margin-left: 3px;
+  }
+  .sub{
+    display: none !important;
+  }
+  .packages .container .row .col-sm{
+    margin-right: 0;
+  }
+  .mb-row{
+    flex-direction: column;
+    gap: 45px;
+    justify-content: center;
+    margin-bottom: 45px;
+  }
+  .mb-card{
+    margin: auto;
+  }
+ 
 }
